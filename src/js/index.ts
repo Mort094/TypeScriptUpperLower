@@ -4,17 +4,26 @@ new Vue({
     // which is included at the bottom of the html file.
     el: "#app",
     data: {
-        name: "",
-        greeting: ""
+        text: "",
+        operation: "toUpper",
+        result: ""
     },
     methods: {
-        sayHello() {
-            console.log("Say Hello " + this.name)
-            if (this.name == "") {
-                this.greeting = "Hello NoName"
+        doIt() {
+            //console.log("Say Hello " + this.name)
+            if (this.text == "") {
+                this.result = "Need some letters"
             }
             else {
-                this.greeting = "Hello " + this.name
+
+                if (this.operation == "toUpper") 
+                {
+                    
+                    this.result = this.text.toUpperCase() 
+                }else if (this.operation == "toLower") {
+                    this.result = this.text.toLowerCase();
+                }
+
             }
         }
     }
